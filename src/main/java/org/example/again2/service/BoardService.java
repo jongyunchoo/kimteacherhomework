@@ -32,7 +32,7 @@ public class BoardService {
         Page<Board> boards = boardRepository.findAllByOrderByModifiedAtDesc(pageable);
 
         return boards.map(board -> new BoardSimpleResponseDto(
-                board.getId(),board.getTitle(),board.getContents()
+                board.getId(),board.getTitle(),board.getComments()
         ));
     }
 
