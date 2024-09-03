@@ -22,6 +22,7 @@ public class CommentService {
     private final BoardRepository boardRepository;
     private final CommentRepository commentRepository;
 
+    @Transactional
     public CommentSaveResponseDto saveComment(Long boardId, CommentSaveRequestDto commentSaveRequestDto) {
 
         Board board = boardRepository.findById(boardId).orElseThrow(()->new NullPointerException("게시물 없습니다."));

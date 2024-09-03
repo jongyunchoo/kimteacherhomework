@@ -1,6 +1,7 @@
 package org.example.again1.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.example.again1.dto.Comment.CommentResponseDto;
 import org.example.again1.dto.Comment.CommentSaveRequestDto;
 import org.example.again1.dto.Comment.CommentSaveResponseDto;
 import org.example.again1.service.CommentService;
@@ -20,7 +21,7 @@ public class CommentController {
     }
 
     @GetMapping("/boards/comments")
-    public List<CommentSaveResponseDto> getComments(){
+    public List<CommentResponseDto> getComments(){
         return commentService.getComments();
     }
 }
